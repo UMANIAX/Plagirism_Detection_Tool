@@ -13,18 +13,31 @@ def main():
 
     print(bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
 
-    # fh = open('dexter.java')
-    #
-    # for line in fh:
-    #     print(line, end='')
+    keywords = []
 
-    # keywords = []
-    #
-    # fk = open('keywords.txt')
-    #
-    # for word in fk:
-    #     keywords.append(word)
-    #
+    fk = open('keywords.txt')
+
+    for word in fk:
+        keywords.append(word)
+
+    fh = open('dexter.java')
+    statement = []
+
+    # temp = 'I love bananas'
+    # statement = temp.split(' ')
+    # print(statement)
+
+    for line in fh:
+        # print(line, end='')
+        statement = line.split(' ')
+
+        for word in statement:
+
+            if word in keywords:
+                print(bcolors.WARNING + word + bcolors.ENDC, end=' ')
+            else:
+                print(word, end=' ')
+
     # for line in keywords:
     #     print(line)
 
