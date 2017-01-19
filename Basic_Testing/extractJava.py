@@ -11,14 +11,16 @@ class bcolors:
 
 def main():
 
-    print(bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
-
-    keywords = []
+    # print(bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
 
     fk = open('keywords.txt')
+    keywords = []
 
     for word in fk:
         keywords.append(word)
+
+    sFormat = ' '.join(keywords)
+    keywords = sFormat.split('\n ')
 
     fh = open('dexter.java')
     statement = []
